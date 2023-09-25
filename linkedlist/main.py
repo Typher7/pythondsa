@@ -36,3 +36,19 @@ class LinkedList:
             temp.next = None
             temp.data = None
             self.length-=1
+
+    def Print(self, llist):
+        itr=llist
+        while itr:
+            print(itr.value, end=" -> ")
+            itr=itr.next
+        print("Nonny")
+
+    def reverse_recursive(self, current, prev=None):
+        if not current:
+            return prev
+
+        next_node = current.next
+        current.next = prev
+
+        return self.reverse_recursive(next_node, current)
