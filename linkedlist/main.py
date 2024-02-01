@@ -9,11 +9,15 @@ class DoubleListNode:
         self.next=next
         self.prev=prev
 
-class LinkedList:
+class SingleLinkedList:
     def __init__(self):
         self.head = None
         self.tail=None
         self.length=0
+        
+    def add_head(self, value):
+        node = SingleListNode(value, self.head)
+        self.head = node
     
     def getNode(self, index):
         if index < 0 or index >= self.length:
@@ -37,10 +41,10 @@ class LinkedList:
             temp.data = None
             self.length-=1
 
-    def Print(self, llist):
-        itr=llist
+    def Print(self):
+        itr=self.head
         while itr:
-            print(itr.value, end=" -> ")
+            print(itr.data, end=" -> ")
             itr=itr.next
         print("Nonny")
 
@@ -52,3 +56,10 @@ class LinkedList:
         current.next = prev
 
         return self.reverse_recursive(next_node, current)
+        
+llist = SingleLinkedList()
+llist.add_head(1)
+llist.add_head(2)
+llist.add_head(3)
+llist.add_head(4)
+llist.Print()
