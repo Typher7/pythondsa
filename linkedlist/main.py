@@ -46,7 +46,7 @@ class SingleLinkedList:
         while itr:
             print(itr.data, end=" -> ")
             itr=itr.next
-        print("Nonny")
+        print("None")
 
     def reverse_recursive(self, current, prev=None):
         if not current:
